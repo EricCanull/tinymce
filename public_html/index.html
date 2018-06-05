@@ -27,23 +27,29 @@
 
     <script>
       tinymce.init({
-          selector: "textarea#tinymceEditor",
-          themes: "modern",
-          skin: "custom",
-          height: "400",
-//          force_br_newlines: true, // force <br> lines
-//          force_p_newlines: false, // prevent <p> 
-//          forced_root_block: '',   // Needed for 3.x
-          plugins: [
-              "advlist autolink link image lists charmap print preview hr anchor",
-              "pagebreak spellchecker searchreplace wordcount visualblocks",
-              "visualchars code fullscreen insertdatetime media nonbreaking",
-              "save table contextmenu directionality template paste textcolor",
-              "colorpicker imagetools"
-          ],
+        selector: "textarea#tinymceEditor",
+        themes: "modern",
+        skin: "custom",
+        height: "400",
+//      force_br_newlines: true, // force <br> lines
+//      force_p_newlines: false, // prevent <p> 
+//      forced_root_block: '',   // Needed for 3.x
+        plugins: [
+          "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak",
+          "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+          "table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"
+        ],
+
+        toolbar1: "newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
+        toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor",
+        toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | visualchars visualblocks nonbreaking template pagebreak restoredraft",
+        
+        menubar: false,
+        toolbar_items_size: 'small',
           
           // Example word content CSS (should be your site CSS) this one removes paragraph margins
 	  content_css : "css/word.css",
+      
 
           spellchecker_callback: function (method, text, success, failure) {
               var words = text.match(this.getWordCharPattern());
